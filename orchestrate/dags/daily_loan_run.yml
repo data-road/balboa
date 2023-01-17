@@ -1,14 +1,5 @@
-daily_loan_run:
-  description: "Blue / Green run"
-  schedule_interval: "0 * * 1/12 *"
-  tags:
-    - version_4
-  default_args:
-    start_date: 2021-01-01
-  catchup: False
-  task_groups:
-    extract_and_load:
-      tooltip: "Extract and Load tasks"
+my_dag:
+  start_date: 2021-01-01
   tasks:
     dbt_build:
       operator: airflow.operators.bash_operator.BashOperator
